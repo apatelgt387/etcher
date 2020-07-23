@@ -281,11 +281,7 @@ export async function flash(
 	analytics.logEvent('Flash', analyticsData);
 
 	try {
-		const result = await write(
-			image,
-			drives,
-			flashState.setProgressState,
-		);
+		const result = await write(image, drives, flashState.setProgressState);
 		flashState.unsetFlashingFlag(result);
 	} catch (error) {
 		flashState.unsetFlashingFlag({ cancelled: false, errorCode: error.code });
