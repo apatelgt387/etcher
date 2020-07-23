@@ -60,7 +60,7 @@ describe('Browser: imageWriter', () => {
 				});
 
 				try {
-					imageWriter.flash(image, [fakeDrive], performWriteStub)
+					await imageWriter.flash(image, [fakeDrive], performWriteStub);
 				} catch {
 					// noop
 				} finally {
@@ -76,16 +76,8 @@ describe('Browser: imageWriter', () => {
 
 				try {
 					await Promise.all([
-						imageWriter.flash(
-							image,
-							[fakeDrive],
-							performWriteStub,
-						),
-						imageWriter.flash(
-							image,
-							[fakeDrive],
-							performWriteStub,
-						),
+						imageWriter.flash(image, [fakeDrive], performWriteStub),
+						imageWriter.flash(image, [fakeDrive], performWriteStub),
 					]);
 					assert.fail('Writing twice should fail');
 				} catch (error) {
@@ -112,11 +104,7 @@ describe('Browser: imageWriter', () => {
 
 			it('should set flashing to false when done', async () => {
 				try {
-					await imageWriter.flash(
-						image,
-						[fakeDrive],
-						performWriteStub,
-					);
+					await imageWriter.flash(image, [fakeDrive], performWriteStub);
 				} catch {
 					// noop
 				} finally {
@@ -126,11 +114,7 @@ describe('Browser: imageWriter', () => {
 
 			it('should set the error code in the flash results', async () => {
 				try {
-					await imageWriter.flash(
-						image,
-						[fakeDrive],
-						performWriteStub,
-					);
+					await imageWriter.flash(image, [fakeDrive], performWriteStub);
 				} catch {
 					// noop
 				} finally {
@@ -145,11 +129,7 @@ describe('Browser: imageWriter', () => {
 					sourceChecksum: '1234',
 				});
 				try {
-					await imageWriter.flash(
-						image,
-						[fakeDrive],
-						performWriteStub,
-					);
+					await imageWriter.flash(image, [fakeDrive], performWriteStub);
 				} catch (error) {
 					expect(error).to.be.an.instanceof(Error);
 					expect(error.message).to.equal('write error');
