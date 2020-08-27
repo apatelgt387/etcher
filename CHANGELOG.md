@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+# v1.5.105
+## (2020-08-27)
+
+* Rework system & large drives handling logic [Lorenzo Alberto Maria Ambrosi]
+* Override cached window's zoomFactor [Lorenzo Alberto Maria Ambrosi]
+* Add default export for .svg files [Lorenzo Alberto Maria Ambrosi]
+* Ignore vscode workspace folder [Lorenzo Alberto Maria Ambrosi]
+* Reword macOS Catalina askpass message [Lorenzo Alberto Maria Ambrosi]
+* Add clone-drive workflow [Lorenzo Alberto Maria Ambrosi]
+* Split drive selector from target selector [Lorenzo Alberto Maria Ambrosi]
+* Resize modal to show content appropriately [Lorenzo Alberto Maria Ambrosi]
+
 # v1.5.104
 ## (2020-08-20)
 
